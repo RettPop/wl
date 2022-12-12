@@ -3,6 +3,12 @@
 shopt -s expand_aliases
 source ~/.bash_aliases
 
+if [ $# -lt 3 ]
+then
+    echo "Too few parameters. Usage:"
+    echo basename "$0" \<logfile name\> \<command with parameters to execute\>
+fi
+
 rotate()
 {
         caller_name="$1"
